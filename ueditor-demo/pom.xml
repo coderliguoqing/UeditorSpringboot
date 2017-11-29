@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.com.lee</groupId>
+  <artifactId>ueditor-demo</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ueditor-demo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+		<!-- 编码方式指定 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Java版本指定 -->
+		<java.version>1.8</java.version>
+	</properties>
+	<!-- 父/基础 包指定 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <!-- ueditot依赖的json包 -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160517</version>
+		</dependency>
+		<dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>ueditor-demo</finalName>
+		<plugins>  
+            <plugin>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-maven-plugin</artifactId>  
+            </plugin>  
+        </plugins>  
+    </build>  
+    <repositories>  
+        <repository>  
+            <id>spring-milestone</id>  
+            <url>http://repo.spring.io/libs-release</url>  
+        </repository>  
+    </repositories>  
+    
+</project>
