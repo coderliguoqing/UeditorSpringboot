@@ -13,6 +13,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.util.ResourceUtils;
 
 import cn.com.lee.common.ueditor.define.ActionMap;
 
@@ -156,7 +157,7 @@ public final class ConfigManager {
 	
 	private void initEnv () throws FileNotFoundException, IOException {
 		
-		File file = new File( this.originalPath );
+		/*File file = new File( this.originalPath );
 		
 		if ( !file.isAbsolute() ) {
 			file = new File( file.getAbsolutePath() );
@@ -171,7 +172,10 @@ public final class ConfigManager {
 		
 		this.parentPath = file.getParent();
 		
-		String configContent = this.readFile( this.getConfigPath() );
+		String configContent = this.readFile( this.getConfigPath() );*/
+		//更改获取配置文件的方式
+		String configPath = ResourceUtils.getFile("classpath:config.json").getAbsolutePath();
+		String configContent =  this.readFile( configPath );
 		
 		try{
 			JSONObject jsonConfig = new JSONObject( configContent );
